@@ -34,8 +34,8 @@ public class ElectricSpawner extends SlimefunItem {
 	EntityType entity;
 
 	public ElectricSpawner(Category category, String mob, EntityType type, Research research) throws Exception {
-		super(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI2YmQ5NzI3YWJiNTVkNTQxNTI2NTc4OWQ0ZjI5ODQ3ODFhMzQzYzY4ZGNhZjU3ZjU1NGE1ZTlhYTFjZCJ9fX0="), "&ePowered Spawner &7(" + StringUtils.format(mob) + ")", "", "&8\u21E8 &e\u26A1 &7Max Entity Cap: 6", "&8\u21E8 &e\u26A1 &7512 J Buffer", "&8\u21E8 &e\u26A1 &7240 J/Mob"), "ELECTRIC_SPAWNER_" + mob, RecipeType.ENHANCED_CRAFTING_TABLE, 
-		new ItemStack[] {null, SlimefunItems.PLUTONIUM, null, SlimefunItems.ELECTRIC_MOTOR, new CustomItem(Material.SPAWNER, "&bReinforced Spawner", "&7Type: &b" + StringUtils.format(type.toString())), SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.BLISTERING_INGOT_3});
+		super(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI2YmQ5NzI3YWJiNTVkNTQxNTI2NTc4OWQ0ZjI5ODQ3ODFhMzQzYzY4ZGNhZjU3ZjU1NGE1ZTlhYTFjZCJ9fX0="), "&eSpawner Electrificado &7(" + StringUtils.format(mob) + ")", "", "&8\u21E8 &e\u26A1 &7Cant. Max de mobs: 6", "&8\u21E8 &e\u26A1 &7512 J Buffer", "&8\u21E8 &e\u26A1 &7240 J/Mob"), "ELECTRIC_SPAWNER_" + mob, RecipeType.ENHANCED_CRAFTING_TABLE, 
+		new ItemStack[] {null, SlimefunItems.PLUTONIUM, null, SlimefunItems.ELECTRIC_MOTOR, new CustomItem(Material.SPAWNER, "&bSpawner Reforzado", "&7Tipo: &b" + StringUtils.format(type.toString())), SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.BLISTERING_INGOT_3});
 		
 		this.entity = type;
 		
@@ -54,7 +54,7 @@ public class ElectricSpawner extends SlimefunItem {
 			}
 		});
 		
-		new BlockMenuPreset(getID(), "&cPowered Spawner") {
+		new BlockMenuPreset(getID(), "&cSpawner Electrificado") {
 			
 			@Override
 			public void init() {
@@ -76,7 +76,7 @@ public class ElectricSpawner extends SlimefunItem {
 			@Override
 			public void newInstance(final BlockMenu menu, final Block b) {
 				if (!BlockStorage.hasBlockInfo(b) || BlockStorage.getLocationInfo(b.getLocation(), "enabled") == null || BlockStorage.getLocationInfo(b.getLocation(), "enabled").equals("false")) {
-					menu.replaceExistingItem(4, new CustomItem(Material.GUNPOWDER, "&7Enabled: &4\u2718", "", "&e> Click to enable this Machine"));
+					menu.replaceExistingItem(4, new CustomItem(Material.GUNPOWDER, "&7Activado: &4\u2718", "", "&e> Click para activar esta máquina"));
 					menu.addMenuClickHandler(4, new MenuClickHandler() {
 
 						@Override
@@ -88,7 +88,7 @@ public class ElectricSpawner extends SlimefunItem {
 					});
 				}
 				else {
-					menu.replaceExistingItem(4, new CustomItem(Material.REDSTONE, "&7Enabled: &2\u2714", "", "&e> Click to disable this Machine"));
+					menu.replaceExistingItem(4, new CustomItem(Material.REDSTONE, "&7Activado: &2\u2714", "", "&e> Click para desactivar esta máquina"));
 					menu.addMenuClickHandler(4, new MenuClickHandler() {
 
 						@Override
