@@ -37,7 +37,7 @@ public class ElectricSpawners extends JavaPlugin implements Listener {
 		}
 		else {
 			// If we are using a development build, we want to switch to our custom 
-			updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/ElectricSpawners/master");
+			updater = new GitHubBuildsUpdater(this, getFile(), "Agnax/ElectricSpawners/master");
 		}
 		
 		// Only run the Updater if it has not been disabled
